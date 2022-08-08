@@ -1,0 +1,7 @@
+{
+  "name": "fresh-futures-task",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
