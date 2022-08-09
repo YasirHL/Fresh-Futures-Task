@@ -1,3 +1,11 @@
-<p>
-  add-user works!
-</p>
+<form [formGroup]="users" (ngSubmit)="addUser()">
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" formControlName="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Password</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+  <ion-button expand="full" type="submit" [disabled]="!users.valid">Add User</ion-button>
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from 'src/app/service/backend.service';
 
 @Component({
   selector: 'app-list-user',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListUserComponent implements OnInit {
 
-  constructor() { }
+  users: any;
 
-  ngOnInit() {}
+  constructor(private backendService: BackendService) { }
+
+  ngOnInit(){this.getUsers();}
+
+  getUsers()
+  {
+    this.backendService.getUserList().subscribe((res: any) => {this.users = res});
+  }
 
 }

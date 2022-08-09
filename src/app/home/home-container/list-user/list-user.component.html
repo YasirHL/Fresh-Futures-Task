@@ -1,3 +1,9 @@
-<p>
-  list-user works!
-</p>
+<ion-list>
+  <ion-list-header> User List </ion-list-header>
+  <ion-item *ngFor="let user of users">
+    <ion-label>
+      <h2>Username: {{user.name}}</h2>
+      <p>User password: {{user.password}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

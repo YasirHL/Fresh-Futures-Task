@@ -1,29 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
 import { HomePageRoutingModule } from './home-routing.module';
-import { HomeContainerComponent } from './home-container/home-container.component';
-import { AddUserComponent } from './home-container/add-user/add-user.component';
-import { ListUserComponent } from './home-container/list-user/list-user.component';
-
+import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SharedModule
   ],
+  declarations: [HomePage],
   
-  declarations: [
-    HomePage,
-    HomeContainerComponent,
-    AddUserComponent,
-    ListUserComponent   
-  ],
-  exports:[ListUserComponent] // <-- To use in another module
 })
 export class HomePageModule {}
